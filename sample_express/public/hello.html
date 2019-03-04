@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script>
+
+myFunction = function () {
+  var btn = document.createElement("BUTTON");
+  var t = document.createTextNode("CLICK ME");
+  btn.appendChild(t);
+  document.body.appendChild(btn);
+}
+		print = function(msg){
+			
+                         return function(){console.log(msg); }
+		}
+		 counter = function(source,count){
+			for(var i=0; i<count;i++ ){
+                                    setTimeout(print(source + ":" + i + " second over"),1000*i);
+
+                         //   (function (i){
+                             //  setTimeout(function () {
+                            //        print (source +":"+i + " seconds are over.");
+                            //   },i*1000); 
+       
+                        //    })(i);
+
+				
+			}
+		    
+                    }
+	</script>
+	<form>
+		<input type="text" name="" value="Manoj">
+		<input type="text" name="" value="Kumar">
+		<input type="button" onclick="counter('button1', 20)" name="" value="button 1">
+        <input type="button" name="" onclick="counter('button2', 10)"  value="button 2">
+        <input type="button" onclick="myFunction()" name="" value="button 1">
+	</form>
+	
+ 
+</body>
+</html>

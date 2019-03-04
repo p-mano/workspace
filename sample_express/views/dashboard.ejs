@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+  	<script>
+  		var doLogout=function(){
+  			location = "/login";
+  		};
+  		var doAbout=function(){
+  			location = "/about";
+  		};
+  		var doDashboard=function(){
+  			location = "/dashboard";
+  		};
+  		var doCustomers=function(){
+  			location = "/customers"
+  		};
+  	</script>
+    <h1><%= title %></h1>
+    <button onclick="doDashboard()">Dashboard</button> |
+    <button onclick="doCustomers()">Customers</button> |
+    <button onclick="doAbout()">Aboutus</button> |
+    <button onclick="doLogout()">Logout</button>
+    <hr>
+  </body>
+</html>

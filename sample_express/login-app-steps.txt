@@ -1,0 +1,20 @@
+1. login to about (login.ejs)
+hint:
+---
+       doLogin = function(){
+        location = '/about';
+      }
+
+2. add another route
+     /dashboard
+
+3. In dashboard.ejs (add buttons to navigate)
+----
+  <body>
+    <h1><%= title %></h1>
+    <button>Dashboard</button> |
+    <button>Customers</button> |
+    <button>Aboutus</button> |
+    <button>Logout</button>
+    <hr>
+  </body>
