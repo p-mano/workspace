@@ -1,0 +1,70 @@
+<app-menu></app-menu>
+
+
+<div class="row">
+<div clss="col-md-12">
+
+<input type="text" class="form-control"  [(ngModel)]="student.name" name="" placeholder="enter name" >
+<input type="text"  class="form-control" [(ngModel)]="student.email" name="" placeholder="email"  >
+<input type="text"  class="form-control" [(ngModel)]="student.mobile" name="" placeholder="mobile" >
+<input type="text"  class="form-control" [(ngModel)]="student.address" name="" placeholder="address" >
+   <input type="button" class="btn btn-primary"  (click)="addStudent()" value="Enter Employee Deatils">
+
+</div>
+</div >
+<div class="row">
+  <div clss="col-md-6">
+<input type="number"  class="form-control" [(ngModel)]="num" name="" placeholder="num" >
+   <button type="button" class="btn btn-primary"  (click)="removeStudent(num)"> Remove student</button></div>
+   <div clss="col-md-3">
+   <button type="button" class="btn btn-primary"  (click)="clearItems()"> clear student</button></div>
+   <div clss="col-md-3">
+   <button type="button" class="btn btn-primary" (click)="getItems()"> get student</button>
+</div>
+ </div>
+
+ <div class="IsmodelShow">
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Class</th>
+        <th>Subject</th>
+        <th>School Name</th>
+      </tr>
+    </thead>
+    
+    <tbody>
+  <tr *ngFor="let student of students"  [class.selected]="student === selectedstudent"
+  (click)="onSelect(student)">
+ <td>{{student.id}}</td><td>{{student.name}}</td>
+ <td>{{student.class}}</td> <td>{{student.subject}}</td> <td>{{student.schoolname}}</td> 
+ <td><button type="button" class="close" (click)="close()">&times;</button></td>
+ </tr>
+</tbody>
+</table>
+
+</div>
+     <div>
+         <div *ngIf="selectedstudent">
+
+             <h2>{{selectstudent.name | uppercase}} Details</h2>
+             <div><span>id: </span>{{selectstudent.id}}</div>
+             <div>
+               <label>name:
+                 <input [(ngModel)]="selectedstudent.name" placeholder="name">
+               </label>
+               <label>email:
+                   <input [(ngModel)]="selectedstudent.rollno" placeholder="email">
+                 </label>
+                 <label>mobile:
+                  <input [(ngModel)]="selectedstudent.class" placeholder="mobile">
+                </label>
+                <label>address:
+                  <input [(ngModel)]="selectedstudent.attendance" placeholder="address">
+                </label>
+             </div>
+           
+           </div>
+  
